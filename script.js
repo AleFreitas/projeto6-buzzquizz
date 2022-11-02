@@ -1,4 +1,3 @@
-
 function fetchQuizzes() {
   const quizzesElement = document.querySelector(".quizzes");
   axios
@@ -30,6 +29,7 @@ function beginQuizz(quizzID) {
     selectedQuizz = arr[0];
     console.log(selectedQuizz);
   }
+  window.location.href = `secondPage.html?quizzID=${quizzID}`;
 }
 
 fetchQuizzes();

@@ -86,6 +86,7 @@ function validateQuizz(quizz) {
     showError(`Expected at least one level with 0% minumum rate`);
     return false;
   }
+  return true;
 }
 
 function validateImageUrl(imageUrl) {
