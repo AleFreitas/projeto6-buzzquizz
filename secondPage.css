@@ -55,6 +55,7 @@ body{
     display:flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position:relative;
 }.answer{
     margin-top:20px;
 }.answer img{
@@ -69,4 +70,21 @@ body{
     max-width: 330px;
     max-height: 46px;
     overflow:hidden;
+}.select{
+    width:100%;
+    height:100%;
+    background-color:rgba(255, 255, 255, 0.7);
+    position:absolute;
+    z-index:2;
+}.selected{
+    z-index:3;
+}.true{
+    color:#009C22;
+}.false{
+    color:#FF4B4B;
+}.answerNotChosen{
+    color:#000000;
+}
+.hidden{
+    display:none;
 }
