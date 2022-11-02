@@ -1,12 +1,12 @@
 function getQuizz(id){
     const quizz = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/"+id)
-    quizz.then(buildHeader);
+    quizz.then(buildQuizz);
     quizz.catch(function (err) {
         console.log(err);
         alert("Erro ao buscar o quizz. Tente mais tarde");
       });
 }
-function buildHeader(response){
+function buildQuizz(response){
     //building header
     const header = document.querySelector(".quizzHeader")
     header.innerHTML = `
@@ -15,9 +15,6 @@ function buildHeader(response){
         <p>${response.data.title}</p>
     </div>
     `
-    buildQuestions(response)
-}
-function buildQuestions(response){
     //building questions
     const questionsSection = document.querySelector("section") 
     for(i=0;i<response.data.questions.length;i++){
@@ -47,7 +44,6 @@ function buildQuestions(response){
         let color = document.getElementById(`${i}`);
         color.style.backgroundColor = question.color;
     }
-
 }
 
 const urlParams = new URLSearchParams(window.location.search);
