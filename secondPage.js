@@ -95,6 +95,9 @@ function finishGame(){
     <a href="index.html">Voltar pra home</a>
     `
 }
+function resetGame(){
+    window.location.reload()
+}
 
 
 const urlParams = new URLSearchParams(window.location.search);
