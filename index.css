@@ -1,0 +1,43 @@
+.content {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-quizzes.empty {
+  border: dashed 1px #d4d4d4;
+  border-radius: 5px;
+  margin-top: 146px;
+  width: 1051px;
+  height: 181px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.no-quizzes {
+  margin-top: 33px;
+  width: 250px;
+  color: #b9b9b9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+}
+
+.create-quizz {
+  margin-bottom: 33px;
+  border: dashed 1px #ec362d;
+  border-radius: 50px;
+  color: #ec362d;
+  font-size: 21px;
+  font-weight: 400;
+  width: 151px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
