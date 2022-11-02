@@ -102,3 +102,20 @@ function validateImageUrl(imageUrl) {
 function showError(error) {
   console.log(`Invalid quizz: ${error}`);
 }
+
+// return the id's of all the quizzes created by the user
+function getLocalStorageIDs() {
+  const ids = localStorage.getItem("created-quizzes");
+  const lstIds = JSON.parse(ids);
+  return lstIds;
+}
+
+// add an id to local storage (if not already there)
+function addIDtoLocalStorage(id) {
+  const ids = getLocalStorageIDs();
+  if (ids.find((i) => id === i)) {
+    return;
+  }
+  ids.push(id);
+  localStorage.setItem("created-quizzes", JSON.stringify(ids));
+}
