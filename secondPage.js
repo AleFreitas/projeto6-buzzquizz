@@ -1,6 +1,7 @@
 let rightAnswers = 0;
 let wrongAnswers = 0;
 let NumberOfQuestions = 0;
+let levels = []
 function getQuizz(id){
     const quizz = axios.get("https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/"+id)
     quizz.then(buildQuizz);
@@ -48,10 +49,10 @@ function buildQuizz(response){
         questionsSection.innerHTML += newQuestion
         let color = document.getElementById(`${i}`);
         color.style.backgroundColor = question.color;
+        levels = response.data.levels
     }
 }
 function selectAnswer(element){
-    console.log("entrou")
     const parent = element.parentNode
     element.classList.add("selected")
     if(element.classList.contains("true")){
@@ -71,9 +72,30 @@ function selectAnswer(element){
     if((rightAnswers+wrongAnswers) === NumberOfQuestions){
         finishGame()   
     }
-    console.log(rightAnswers)
-    console.log(wrongAnswers)
 }
+function finishGame(){
+    endGame = document.querySelector(".endGame");
+    endGame.classList.remove("hidden");
+    percentage = (rightAnswers/NumberOfQuestions)*100;
+    levelReached = ""
+    for(i=0;i<levels.length;i++){
+        if(levels[i].minValue < percentage){
+            levelReached = levels[i]
+        }
+    }
+    endGame.innerHTML+=`
+    <div class="endTitle">
+        ${levelReached.title}
+    </div>
+    <div class="endContent">
+        <img src="${levelReached.image}">
+        <p>${levelReached.text}</p>
+    </div>
+    <button onclick="resetGame()">Reiniciar Quizz</button>
+    <a href="index.html">Voltar pra home</a>
+    `
+}
+
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("quizzID");

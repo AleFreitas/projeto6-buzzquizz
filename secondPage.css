@@ -24,7 +24,7 @@ body{
     justify-content: center;
 }.quizzHeader p{
     color:#ffffff;
-    font-family: Roboto;
+    font-family: 'Roboto',sans-serif;
     font-size: 39px;
     font-weight: 400;
     line-height: 46px;
@@ -84,7 +84,63 @@ body{
     color:#FF4B4B;
 }.answerNotChosen{
     color:#000000;
-}
-.hidden{
+}.endGame{
+    margin-top:44px;
+    height: 100%;
+    width: 759px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}.endTitle{
+    height: 99px;
+    width: 100%;
+    background-color: #EC362D;
+    color:#ffffff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto',sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 27px;
+    text-align: center;
+}.endContent{
+    width:100%;
+    margin-top:18px;
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}.endContent img{
+    height: 273px;
+    width: 364px;
+}.endContent p{
+    height: 250px;
+    width: 328px;
+    font-family: 'Roboto',sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 25px;
+    text-align: left;
+}button{
+    margin-top:57px;
+    background-color: #EC362D;
+    color:#ffffff;
+    height: 52px;
+    width: 260px;
+    border:none;
+    border-radius: 15px;
+}.endGame a{
+    margin-top:16px;
+    text-decoration: none;
+    color:#818181;
+    height: 44px;
+    width: 220px;
+}button,.endGame a{
+    font-family: 'Roboto',sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: center;
+}.hidden{
     display:none;
 }
