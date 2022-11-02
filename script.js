@@ -12,10 +12,10 @@ function fetchQuizzes() {
         if (localQuizzesIds.find((id) => id == quizz.id)) {
           console.log(inner);
           localQuizzesElement.innerHTML += inner;
+          hasLocalQuizzes = true;
           console.log(localQuizzesElement);
         } else {
           quizzesElement.innerHTML += inner;
-          hasLocalQuizzes = true;
         }
       });
       quizzes = response.data;
