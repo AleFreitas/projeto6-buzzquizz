@@ -106,6 +106,7 @@ function showError(error) {
 // return the id's of all the quizzes created by the user
 function getLocalStorageIDs() {
   const ids = localStorage.getItem("created-quizzes");
+  if (!ids) return [];
   const lstIds = JSON.parse(ids);
   return lstIds;
 }

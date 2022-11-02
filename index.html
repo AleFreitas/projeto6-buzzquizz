@@ -17,6 +17,11 @@
     <header>BuzzQuizz</header>
     <div class="content">
       <div class="user-quizzes empty">
+        <div class="user-quizzes-title">
+          <h2>Seus Quizzes</h2>
+          <ion-icon onclick="beginCreateQuizz()" name="add-circle"></ion-icon>
+        </div>
+        <div class="quizzes"></div>
         <div class="no-quizzes">Você não criou nenhum quizz ainda :(</div>
         <p class="create-quizz" onclick="beginCreateQuizz()">Criar Quizz</p>
       </div>
@@ -25,7 +30,14 @@
         <div class="quizzes"></div>
       </div>
     </div>
-    <a href="secondPage.html">Clique aqui para pagina 2</a>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
     <script src="globals.js"></script>
     <script src="script.js"></script>
