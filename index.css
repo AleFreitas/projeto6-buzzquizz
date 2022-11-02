@@ -1,6 +1,7 @@
 .content {
   font-family: "Roboto", sans-serif;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -40,4 +41,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.quizzes-panel {
+  margin-top: 77px;
+  width: 1065px;
+}
+
+.quizzes-panel h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.quizzes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.quizz-card {
+  width: 340px;
+  height: 181px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.quizz-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.quizz-card .title {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-weight: bold;
+    color: #ffffff;
 }
