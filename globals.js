@@ -99,6 +99,36 @@ function validateImageUrl(imageUrl) {
 
   return true;
 }
+
+function validateQuizzHeaders(
+  title,
+  imageUrl,
+  numberOfQuestions,
+  numberOfLevels
+) {
+  numberOfLevels = Number(numberOfLevels);
+  numberOfQuestions = Number(numberOfQuestions);
+
+  if (!title || title.length < 20 || title.length > 65) {
+    showError("Invalid quizz title");
+    return false;
+  }
+  if (!validateImageUrl(imageUrl)) {
+    showError("Invalid quizz image url");
+    return false;
+  }
+  if (!numberOfQuestions || numberOfLevels.length < 3) {
+    showError("Not enough questions");
+    return false;
+  }
+  if (!numberOfLevels || numberOfLevels.length < 2) {
+    showError("Not enough levels");
+    return false;
+  }
+
+  return true;
+}
+
 function showError(error) {
   console.log(`Invalid quizz: ${error}`);
 }
