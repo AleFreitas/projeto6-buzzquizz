@@ -75,9 +75,42 @@
 }
 
 .quizz-card .title {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    font-weight: bold;
-    color: #ffffff;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding: 0 0 15px 15px;
+  width: calc(100% - 15px);
+  height: 40%;
+  display: flex;
+  align-items: flex-end;
+  color: #ffffff;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(0, 0, 0, 0),
+    rgb(0, 0, 0, 1)
+  );
+}
+
+.quizz-card:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+  .user-quizzes.empty {
+    width: 340px;
+  }
+  .quizzes-panel {
+    margin-top: 77px;
+    width: 340px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .user-quizzes.empty {
+    width: 90%;
+  }
+  .quizzes-panel {
+    margin-top: 77px;
+    width: 90%;
+  }
 }
