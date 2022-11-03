@@ -117,11 +117,11 @@ function validateQuizzHeaders(
     showError("Invalid quizz image url");
     return false;
   }
-  if (!numberOfQuestions || numberOfLevels.length < 3) {
+  if (!numberOfQuestions || numberOfQuestions < 3) {
     showError("Not enough questions");
     return false;
   }
-  if (!numberOfLevels || numberOfLevels.length < 2) {
+  if (!numberOfLevels || numberOfLevels < 2) {
     showError("Not enough levels");
     return false;
   }
