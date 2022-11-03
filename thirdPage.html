@@ -17,22 +17,23 @@
     <div class="containerpagethree">
         <div class="QuizzCreator hidden">
             <div class="title">
-                <h3>Comece pelo Começo</h3>
+                <h3> Comece pelo começo </h3>
             </div>
             <li class="AnswersInformations">
                 <div>
-                    <input placeholder="Titulo do seu quizz" type="text">
-                    <input placeholder="URL da imagem do seu quizz" type="url">
-                    <input placeholder="Quantidade de perguntas do quizz" type="numeric">
-                    <input placeholder="Quantidade de níveis do quizz" type="numeric">
+                    <input id="quizztitle" placeholder="Titulo do seu quizz" type="text">
+                    <input id="quizzimg" placeholder="URL da imagem do seu quizz" type="url">
+                    <input id="quizzquestions" placeholder="Quantidade de perguntas do quizz" type="numeric">
+                    <input id="quizzlevels" placeholder="Quantidade de níveis do quizz" type="numeric">
                 </div>
             </li>
             <div class="thebutton">
-                <button onclick="">Prosseguir para criar perguntas</button>
+                <button onclick="proceedpage()">Prosseguir para criar perguntas</button>
             </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+    <script src="globals.js"></script> 
     <script src="thirdPage.js"></script> 
 </body>
 </html>
