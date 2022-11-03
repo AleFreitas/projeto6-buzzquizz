@@ -94,6 +94,7 @@ function finishGame(){
     <button onclick="resetGame()">Reiniciar Quizz</button>
     <a href="index.html">Voltar pra home</a>
     `
+    endGame.scrollIntoView(true)
 }
 function resetGame(){
     window.location.reload()
