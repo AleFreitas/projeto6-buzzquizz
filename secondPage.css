@@ -168,8 +168,11 @@ body{
     }.answer p{
         max-width:163px;
     }.questionAnswers{
-        width:100%;
+        max-width:482px;
     }.question{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
         margin-bottom:30;
     }.endGame{
         width:100%;
