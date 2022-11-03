@@ -129,6 +129,54 @@ function validateQuizzHeaders(
   return true;
 }
 
+//returns true for valid questions array
+//also trims the empty answers away
+function validateQuizzQuestions(questions) {
+  for (let i = 0; i < questions.length; i++) {
+    if (!questions[i].title || questions[i].title.length < 20) {
+      showError(`Invalid question title: question #${i}`);
+      return false;
+    }
+    if (
+      !questions[i].color ||
+      !questions[i].color.match(/^#([a-fA-F0-9]{6})$/)
+    ) {
+      showError(`Invalid question color: question #${i}`);
+      return false;
+    }
+    if (!questions[i].answers || questions[i].answers.length < 2) {
+      showError(`Not enough answers: question #${i}`);
+      return false;
+    }
+
+    let correctAnswers = 0;
+    let validAnswersArray = [];
+    for (let j = 0; j < questions[i].answers.length; j++) {
+      const answer = questions[i].answers[j];
+      if (!answer.text) {
+        continue;
+      }
+      if (!validateImageUrl(answer.image)) {
+        continue;
+      }
+      validAnswersArray.push(answer);
+      if (answer.isCorrectAnswer) correctAnswers++;
+    }
+    questions[i].answers = validAnswersArray;
+    if (validAnswersArray.length < 2) {
+      showError(`Not enough valid answers: question #${i}`);
+      return false;
+    }
+    if (correctAnswers !== 1) {
+      showError(
+        `Invalid number of correct answers! question #${i} Expected: 1   Provided: ${correctAnswers}`
+      );
+      return false;
+    }
+  }
+  return true;
+}
+
 function showError(error) {
   console.log(`Invalid quizz: ${error}`);
 }
