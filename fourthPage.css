@@ -9,6 +9,10 @@ body {
   align-items: center;
 }
 
+h4 {
+  margin-bottom: 38px;
+}
+
 .QuestionsCreator {
   margin-top: 132px;
 }

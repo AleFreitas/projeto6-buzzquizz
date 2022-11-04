@@ -12,6 +12,10 @@ body {
   margin-top: 132px;
 }
 
+h4 {
+  margin-bottom: 38px;
+}
+
 .LevelsCreator h4 {
   font-size: 23px;
   font-weight: 700;
@@ -29,7 +33,9 @@ body {
 .levelcontainer {
   box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.2);
   margin-bottom: 38px;
+  max-height: 1500px;
   background-color: #ffffff;
+  transition: max-height 500ms;
 }
 
 .ToClick {
