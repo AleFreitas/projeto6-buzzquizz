@@ -1,10 +1,10 @@
 const urlParams = new URLSearchParams(window.location.search);
-const questionJSON = urlParams.get("question");
-let questionsObject = null;
+const quizzJSON = urlParams.get("quizz");
+let quizzObject = null;
 
 function createQuestionContainers(qJSON) {
-  const question = JSON.parse(qJSON);
-  const nQuestions = question.numberOfQuestions;
+  quizzObject = JSON.parse(qJSON);
+  const nQuestions = quizzObject.numberOfQuestions;
   const questionsDiv = document.querySelector(".Questions");
   questionsDiv.innerHTML = "";
   for (let i = 0; i < nQuestions; i++) {
@@ -71,7 +71,7 @@ function validateQuestions() {
     questions.push(question);
   });
   if (validateQuizzQuestions(questions)) {
-    questionsObject = questions;
+    quizzObject.questions = questions;
     return true;
   }
   return false;
@@ -79,11 +79,11 @@ function validateQuestions() {
 
 function proceedToLevels() {
   if (validateQuestions()) {
-    window.location.href = `fifthPage.html?questions=${JSON.stringify(
-      questionsObject
+    window.location.href = `fifthPage.html?quizz=${encodeURIComponent(
+      JSON.stringify(quizzObject)
     )}`;
   } else {
     alert("Quizz Inválido. Preencha os dados corretamente");
   }
 }
-createQuestionContainers(questionJSON);
+createQuestionContainers(quizzJSON);

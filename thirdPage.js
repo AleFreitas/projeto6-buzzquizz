@@ -18,7 +18,7 @@ function proceedpage() {
       numberOfQuestions: Number(quizzquestions.value),
       numberOfLevels: Number(quizzlevels.value),
     };
-    window.location.href = `fourthPage.html?question=${JSON.stringify(
+    window.location.href = `fourthPage.html?quizz=${JSON.stringify(
       question
     )}`;
   } else {
