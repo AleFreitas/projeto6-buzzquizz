@@ -177,6 +177,37 @@ function validateQuizzQuestions(questions) {
   return true;
 }
 
+//returns true for valid levels array
+function validateQuizzLevels(levels) {
+  let zeroPercentLevels = 0;
+  for (let i = 0; i < levels.length; i++) {
+    const level = levels[i];
+    const lvlValue = Number(level.minValue);
+    if (!level.title || level.title.length < 10) {
+      showError(`Invalid level title: level ${i}`);
+      return false;
+    }
+    if (!level.minValue || !(lvlValue >= 0 && lvlValue <= 100)) {
+      showError(`Invalid level %: level ${i}, ${lvlValue}`);
+      return false;
+    }
+    if (!validateImageUrl(level.image)) {
+      showError(`Invalid level image: level ${i}`);
+      return false;
+    }
+    if (!level.text || level.text.length < 30) {
+      showError(`Invalid level description: level ${i}`);
+      return false;
+    }
+    if (lvlValue === 0) zeroPercentLevels++;
+  }
+  if (zeroPercentLevels === 0) {
+    showError(`Expected at least one level with 0% minumum rate`);
+    return false;
+  }
+  return true;
+}
+
 function showError(error) {
   console.log(`Invalid quizz: ${error}`);
 }
