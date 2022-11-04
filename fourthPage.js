@@ -9,12 +9,12 @@ function createQuestionContainers(qJSON) {
   questionsDiv.innerHTML = "";
   for (let i = 0; i < nQuestions; i++) {
     questionsDiv.innerHTML += `
-    <li class="subcontainer">
+    <li class="subcontainer ${i === 0 ? "" : "hidden"}">
     <div class="QuestionNumber">
         <div class="QuestionWindow">
         <div class="ToClick">
           <h3>Pergunta ${i + 1}</h3>
-          <ion-icon onclick="openandhide" name="create-outline"></ion-icon>
+          <ion-icon onclick="openandhide(this)" name="create-outline"></ion-icon>
         </div>
         <div class="QuestionConfig">
           <input class="questionTitle" placeholder="Texto da pergunta" type="text" />
@@ -96,4 +96,16 @@ function proceedToLevels() {
     alert("Quizz Inválido. Preencha os dados corretamente");
   }
 }
+
+function openandhide(element) {
+  const el = element.parentNode.parentNode.parentNode.parentNode;
+  el.classList.remove("hidden");
+  const allContainers = document.querySelectorAll(".subcontainer");
+  allContainers.forEach((c) => {
+    if (c !== el) {
+      c.classList.add("hidden");
+    }
+  });
+}
+
 createQuestionContainers(quizzJSON);
