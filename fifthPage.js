@@ -11,11 +11,19 @@ function createLevelsContainers(qJSON) {
     levelsDiv.innerHTML += `
     <li class="subcontainer2">
         <div class="LevelNumber">
-            <h3>Nível ${i + 1}</h3>
-            <input class="levelTitle" placeholder="Título do nível" type="text">
-            <input class="levelPercentage" placeholder="% de acerto mínima" type="number">
-            <input class="image-url"placeholder="URL da imagem do nível" type="url">
-            <input class="level-description" placeholder="Descrição do nível" type="text">
+          <div class="LevelWindow">
+            <div class="ToClick">
+              <h3>Nível ${i + 1}</h3>
+              <ion-icon onclick="hideandopen()" name="create-outline"></ion-icon>
+            </div>
+          </div>
+            <div class="LevelConfig">
+              <input class="levelTitle" placeholder="Título do nível" type="text">
+              <input class="levelPercentage" placeholder="% de acerto mínima" type="number">
+              <input class="image-url"placeholder="URL da imagem do nível" type="url">
+              <input class="level-description" placeholder="Descrição do nível" type="text">
+            </div>
+          </div>
         </div>
     </li>
     `;
