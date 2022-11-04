@@ -162,6 +162,9 @@ function validateQuizzQuestions(questions) {
       validAnswersArray.push(answer);
       if (answer.isCorrectAnswer) correctAnswers++;
     }
+    validAnswersArray.sort(function () {
+      return Math.random() - 0.5;
+    });
     questions[i].answers = validAnswersArray;
     if (validAnswersArray.length < 2) {
       showError(`Not enough valid answers: question #${i}`);

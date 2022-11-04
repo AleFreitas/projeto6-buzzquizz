@@ -63,11 +63,10 @@ function createQuizz() {
       .then(function (response) {
         if (response.data.id) {
           addIDtoLocalStorage(response.data.id);
+          window.location.href = "sixthPage.html";
         }
       })
-      .catch();
-    alert("passando pra proxima pagina");
-    window.location.href = "sixthPage.html";
+      .catch(() => console.log("Erro ao enviar..."));
   } else {
     alert("Quizz Inválido. Preencha os dados corretamente");
   }
