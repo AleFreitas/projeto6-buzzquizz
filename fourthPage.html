@@ -16,13 +16,22 @@
     <header><a href="index.html">BuzzQuizz</a></header>
     <div class="containerpagefour">
         <div class="QuestionsCreator">
-            <h3>Crie suas perguntas</h3>
+            <div class="title">
+                <h4>Crie suas perguntas</h4>
+            </div>
             <div class="Questions">
                 <li class="subcontainer">
                     <div class="QuestionNumber">
-                        <h3>Pergunta</h3>
-                        <input placeholder="Texto a pergunta" type="text">
-                        <input placeholder="Cor de fundo da pergunta" type="color">
+                        <div class="QuestionWindow">
+                            <div class="ToClick">
+                                <h3>Pergunta</h3>
+                                <ion-icon onclick="openandhide()" name="create-outline"></ion-icon>
+                            </div>
+                            <div class="QuestionConfig">
+                                <input placeholder="Texto a pergunta" type="text">
+                                <input placeholder="Cor de fundo da pergunta" type="text">
+                            </div>
+                        </div>
                     </div>
                     <div class="QuizzAnswers">
                         <h3>Resposta Correta</h3>
@@ -30,14 +39,18 @@
                         <input placeholder="URL da imagem" type="url">
                     </div>
                     <div class="WrongAnswers">
+                        <h3>Resposta Incorreta</h3>
                         <input placeholder="Resposta Incorreta" type="text">
                         <input placeholder="URL da imagem" type="url">
                     </div>
                 </li>
             </div>
-            <button onclick="proceedToLevels()">Prosseguir para criar níveis</button>
         </div>
     </div>
+    <div class="thebuttom">
+        <button onclick="proceedToLevels()">Prosseguir para criar níveis</button>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
     <script src="globals.js"></script>
     <script src="fourthPage.js"></script>

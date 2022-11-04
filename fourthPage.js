@@ -11,9 +11,16 @@ function createQuestionContainers(qJSON) {
     questionsDiv.innerHTML += `
     <li class="subcontainer">
     <div class="QuestionNumber">
-        <h3>Pergunta ${i + 1}</h3>
-        <input class="questionTitle" placeholder="Texto da pergunta" type="text" />
-        <input class="questionColor" placeholder="Cor de fundo da pergunta" type="color" />
+        <div class="QuestionWindow">
+        <div class="ToClick">
+          <h3>Pergunta ${i + 1}</h3>
+          <ion-icon onclick="openandhide" name="create-outline"></ion-icon>
+        </div>
+        <div class="QuestionConfig">
+          <input class="questionTitle" placeholder="Texto da pergunta" type="text" />
+          <input class="questionColor" placeholder="Cor de fundo da pergunta" type="text" />
+        </div>
+      </div>
     </div>
     <div class="QuizzAnswers">
         <h3>Resposta Correta</h3>
@@ -21,14 +28,17 @@ function createQuestionContainers(qJSON) {
         <input class="image-url" placeholder="URL da imagem" type="url" />
     </div>
     <div class="WrongAnswers">
+        <h3>Resposta Incorreta</h3>
         <input class="answer" placeholder="Resposta Incorreta" type="text" />
         <input class="image-url" placeholder="URL da imagem" type="url" />
     </div>
     <div class="WrongAnswers">
+        <h3>Resposta Incorreta</h3>
         <input class="answer" placeholder="Resposta Incorreta" type="text" />
         <input class="image-url" placeholder="URL da imagem" type="url" />
     </div>
     <div class="WrongAnswers">
+        <h3>Resposta Incorreta</h3>
         <input class="answer" placeholder="Resposta Incorreta" type="text" />
         <input class="image-url" placeholder="URL da imagem" type="url" />
     </div>
