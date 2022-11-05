@@ -63,7 +63,9 @@ function createQuizz() {
       .then(function (response) {
         if (response.data.id) {
           addIDtoLocalStorage(response.data.id);
-          window.location.href = "sixthPage.html";
+          window.location.href = `sixthPage.html?imageUrl=${encodeURIComponent(
+            quizzObject.image
+          )}`;
         }
       })
       .catch(() => console.log("Erro ao enviar..."));
