@@ -19,15 +19,17 @@
         <main>
             <p class="title">Seu quizz está pronto</p>
             <section>
-                <!--interior desta section deve ser preenchido com a 
-                imagem do quiz e titulo do quizz, recomendo colocar
-                o <p> como position absolute de section e posiciona-lo
-                acima da imagem-->
-                <img src="imagemDoQuizz" alt="imagemDoQuizz">
-                <p>titulo do quizz</p>
+                <div class="insidethesection">
+                    <img src="imagemDoQuizz" alt="imagemDoQuizz">
+                </div>
             </section>
+            <div class="outsidethesection">
+                <h3>titulo do quizz</h3>
+            </div>
             <button>Acessar Quizz</button>
-            <a href="index.html">Voltar pra home</a>
+            <div class="home">
+                <a href="index.html">Voltar pra home</a>
+            </div>
         </main>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
