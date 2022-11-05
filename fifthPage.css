@@ -1,100 +1,117 @@
-body{
-    font-family: "Roboto", sans-serif;
-    background-color: #fafafa;
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #fafafa;
 }
 
 .containerpagefive {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .LevelsCreator {
-    margin-top: 132px;
+  margin-top: 132px;
 }
 
-.LevelsCreator h4{
-    font-size: 23px;
-    font-weight: 700;
-    line-height: 27px;
-    color: #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+h4 {
+  margin-bottom: 38px;
 }
 
-
-.subcontainer2{
-    background-color: #FFFFFF;
-    box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.2);
-    padding-bottom:  38px;
+.LevelsCreator h4 {
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 27px;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.LevelNumber{
-    margin-top: 36px;
+.subcontainer2 {
+  background-color: #fafafa;
+  padding-bottom: 38px;
+}
+.levelcontainer {
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 38px;
+  max-height: 1500px;
+  background-color: #ffffff;
+  transition: max-height 500ms;
 }
 
-.ToClick{
-    display: flex;
-    justify-content: space-between;
-    padding-top: 27px;
-    margin-left: 19px;
-    margin-right:17px;
-    margin-bottom: 12px;
+.ToClick {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 27px;
+  margin-left: 19px;
+  margin-right: 17px;
+  margin-bottom: 12px;
 }
 
-.ToClick h3{
-   font-size: 20px;
-   font-weight: 700;
-   line-height: 23px;
+.ToClick h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23px;
 }
-ion-icon{
-   height: 23px;
-   width: 25px;
-   cursor: pointer;
-}
-
-.LevelConfig{
-    display: flex;
-    flex-direction: column;
+ion-icon {
+  height: 23px;
+  width: 25px;
+  display: none;
+  cursor: pointer;
 }
 
-input{
-    width: 564px;
-    height: 46px;
-    border-radius: 5px;
-    border:  solid 1px #D1D1D1;
-    background-color: #FFFFFF;
-    color: #BABABA;
-    font-style: italic;
-    line-height: 22px;
-    font-size: 19px;
-    font-weight: 400;
-    margin-left: 19px;
-    margin-right:17px;
-    margin-bottom: 5px;
-    padding-left: 23px;
+.LevelConfig {
+  display: flex;
+  flex-direction: column;
 }
 
-
-.thebuttom{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 468px;
+input {
+  width: 564px;
+  height: 46px;
+  border-radius: 5px;
+  border: solid 1px #d1d1d1;
+  background-color: #ffffff;
+  color: #bababa;
+  font-style: italic;
+  line-height: 22px;
+  font-size: 19px;
+  font-weight: 400;
+  margin-left: 19px;
+  margin-right: 17px;
+  margin-bottom: 5px;
+  padding-left: 23px;
 }
-button{
-    background-color: #EC362D;
-    height: 54px;
-    width: 368px;
-    border-radius: 15px;
-    margin-top: 85px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 21px;
-    font-weight: 400;
-    line-height: 25px;
-    color: #FFF5F4;
-    cursor: pointer;
+
+.thebuttom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 468px;
+}
+button {
+  background-color: #ec362d;
+  height: 54px;
+  width: 368px;
+  border-radius: 15px;
+  margin-top: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 25px;
+  color: #fff5f4;
+  cursor: pointer;
+}
+
+.hidden {
+  max-height: 74px;
+  overflow-y: hidden;
+}
+
+.hidden ion-icon {
+  display: inline;
+}
+
+.hidden .LevelConfig {
+  visibility: hidden;
 }

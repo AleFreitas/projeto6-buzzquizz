@@ -9,12 +9,12 @@ function createLevelsContainers(qJSON) {
   levelsDiv.innerHTML = "";
   for (let i = 0; i < nLevels; i++) {
     levelsDiv.innerHTML += `
-    <li class="subcontainer2">
+    <li class="levelcontainer ${i === 0 ? "" : "hidden"}">
         <div class="LevelNumber">
           <div class="LevelWindow">
             <div class="ToClick">
               <h3>Nível ${i + 1}</h3>
-              <ion-icon onclick="hideandopen()" name="create-outline"></ion-icon>
+              <ion-icon onclick="openandhide(this)" name="create-outline"></ion-icon>
             </div>
           </div>
             <div class="LevelConfig">
@@ -31,7 +31,7 @@ function createLevelsContainers(qJSON) {
 }
 
 function validateLevels() {
-  const levelsElement = document.querySelectorAll(".subcontainer2");
+  const levelsElement = document.querySelectorAll(".levelcontainer");
   const levels = [];
   levelsElement.forEach((levelElement) => {
     const level = {};
@@ -72,4 +72,16 @@ function createQuizz() {
     alert("Quizz Inválido. Preencha os dados corretamente");
   }
 }
+
+function openandhide(element) {
+  const el = element.parentNode.parentNode.parentNode.parentNode;
+  el.classList.remove("hidden");
+  const allContainers = document.querySelectorAll(".levelcontainer");
+  allContainers.forEach((c) => {
+    if (c !== el) {
+      c.classList.add("hidden");
+    }
+  });
+}
+
 createLevelsContainers(quizzJSON);

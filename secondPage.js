@@ -79,7 +79,7 @@ function finishGame(){
     percentage = (rightAnswers/NumberOfQuestions)*100;
     levelReached = ""
     for(i=0;i<levels.length;i++){
-        if(levels[i].minValue < percentage){
+        if(levels[i].minValue <= percentage){
             levelReached = levels[i]
         }
     }
