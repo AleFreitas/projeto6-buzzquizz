@@ -52,6 +52,8 @@ body{
     text-align: center;
     color:#ffffff;
     background-color: #434CA0;
+    overflow-wrap: anywhere;
+    overflow:auto;
 }.questionAnswers{
     display:flex;
     justify-content: space-between;
